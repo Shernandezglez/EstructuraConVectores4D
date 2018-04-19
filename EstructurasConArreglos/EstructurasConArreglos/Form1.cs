@@ -12,8 +12,8 @@ namespace EstructurasConArreglos
 {
     public partial class Form1 : Form
     {
-        Inventario inv = new Inventario();
-
+        Inventario inv = new Inventario(15);
+        Producto pro;
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +21,8 @@ namespace EstructurasConArreglos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Producto pro = new Producto(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(txtCant.Text), Convert.ToInt32(txtCst.Text),txtName.Text,txtDesc.Text);
+            inv.agregarProducto(pro);
             txtCodigo.Clear();
             txtName.Clear();
             txtDesc.Clear();
